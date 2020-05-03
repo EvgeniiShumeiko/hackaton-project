@@ -1,114 +1,94 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
-        <div class="row ">
-            <div class="col ">
-                <div class="row ">
-                    <div class="col ">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wo1OhuEL5kQ" allowfullscreen></iframe>
+<el-container>
+    <el-main>
+        <el-row :gutter="20">
+            <el-col :span="15">
+                <div class="grid-content bg-purple">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wo1OhuEL5kQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :span="8" :offset="1">
+                <div class="grid-content bg-purple">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>План урока</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">Изменить план урока</el-button>
                         </div>
-                    </div>
-                </div>
-                <div class="row  mt-3 mb-4">
-                    <div class="col">
-                        <div class="col p-0">
-                            <div class="chatbody">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading top-bar">
-                                        <div class="col-md-8 col-xs-8">
-                                            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Чат урока математики</h3>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body msg_container_base">
-                                        <div class="row msg_container base_sent">
-                                            <div class="col-md-10 col-xs-10">
-                                                <div class="messages msg_sent">
-                                                    <p>домашнее задание выполнено</p>
-                                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2 col-xs-2 avatar">
-                                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                                            </div>
-                                        </div>
-                                        <div class="row msg_container base_receive">
-                                            <div class="col-md-2 col-xs-2 avatar">
-                                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                                            </div>
-                                            <div class="col-md-10 col-xs-10">
-                                                <div class="messages msg_receive">
-                                                    <p>как перемножить в этой формуле числа?</p>
-                                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <div class="input-group">
-                                            <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
-                                            <span class="input-group-btn">
-                                  <button class="btn btn-primary btn-sm" id="btn-chat">Отправить<i class="fa fa-send fa-1x" aria-hidden="true"></i></button>
-                                  </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div style="height: 385px;">
+                            <el-steps direction="vertical" :active="1">
+                                <el-step title="Организационные моменты"></el-step>
+                                <el-step title="Объявление темы"></el-step>
+                                <el-step title="Проверка домашнего задания"></el-step>
+                                <el-step title="Разъеснение новой темы"></el-step>
+                                <el-step title="Самостоятельное решение"></el-step>
+                                <el-step title="Подведение итогов"></el-step>
+                                <el-step title="Домашнее задание"></el-step>
+                            </el-steps>
                         </div>
-                    </div>
+                    </el-card>
                 </div>
-            </div>
-            <div class="col-4 ">
-                <div class="row">
-                    <div class="col">
-
-                        <ul class="list-group">
-                            <li class="list-group-item active">План урока</li>
-                            <li class="list-group-item ">1. Организационные моменты</li>
-                            <li class="list-group-item">2. ...</li>
-                            <li class="list-group-item">3. ...</li>
-                            <li class="list-group-item">4. ...</li>
-                            <li class="list-group-item">5. ...</li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <!-- Начало текстового контента -->
-                                <h4 class="card-title">Материалы урока</h4>
-                                <h6 class="card-subtitle mb-2 text-muted">Подзаголовок карточки</h6>
-                                <p class="card-text">Некоторый текст...</p>
-                                <a href="#" class="card-link">Первая ссылка</a>
-                                <a href="#" class="card-link">Вторая ссылка</a>
-                            </div>
-                            <!-- Конец текстового контента -->
+            </el-col>
+        </el-row>
+        <el-row :gutter="20">
+            <el-col :span="15">
+                <div class="grid-content bg-purple"></div>
+            </el-col>
+            <el-col :span="8" :offset="1">
+                <div class="grid-content bg-purple">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>Материалы урока</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">Изменить материалы урока урока</el-button>
                         </div>
-                        <!-- Конец карточки -->
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <!-- Начало текстового контента -->
-                                <h4 class="card-title">Домашнее задание</h4>
-                                <h6 class="card-subtitle mb-2 text-muted">Подзаголовок карточки</h6>
-                                <p class="card-text">Некоторый текст...</p>
-                                <a href="#" class="card-link">Первая ссылка</a>
-                                <a href="#" class="card-link">Вторая ссылка</a>
-                            </div>
-                            <!-- Конец текстового контента -->
+                        <div class="block">
+                            <el-timeline>
+                                <el-timeline-item timestamp="2018/4/12" placement="top">
+                                    <el-card>
+                                        <h4>Update Github template</h4>
+                                        <p>Tom committed 2018/4/12 20:46</p>
+                                    </el-card>
+                                </el-timeline-item>
+                                <el-timeline-item timestamp="2018/4/3" placement="top">
+                                    <el-card>
+                                        <h4>Update Github template</h4>
+                                        <p>Tom committed 2018/4/3 20:46</p>
+                                    </el-card>
+                                </el-timeline-item>
+                                <el-timeline-item timestamp="2018/4/2" placement="top">
+                                    <el-card>
+                                        <h4>Update Github template</h4>
+                                        <p>Tom committed 2018/4/2 20:46</p>
+                                    </el-card>
+                                </el-timeline-item>
+                            </el-timeline>
                         </div>
-                        <!-- Конец карточки -->
-                    </div>
+                    </el-card>
                 </div>
-            </div>
+            </el-col>
+        </el-row>
+        <el-row :gutter="20">
+            <el-col :span="15exi">
+                <div class="grid-content bg-purple"></div>
+            </el-col>
+            <el-col :span="8" :offset="1">
+                <div class="grid-content bg-purple">
+                <div class="grid-content bg-purple">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>Домашнее задание</span>
+                        </div>
+                        <div style="height: 385px;">
 
-        </div>
-    </div>
+                        </div>
+                    </el-card>
+                </div>
+                </div>
+            </el-col>
+        </el-row>
+    </el-main>
+</el-container>
 @endsection
