@@ -71,7 +71,7 @@
             </el-col>
         </el-row>
         <el-row :gutter="20">
-            <el-col :span="15exi">
+            <el-col :span="15">
                 <div class="grid-content bg-purple"></div>
             </el-col>
             <el-col :span="8" :offset="1">
