@@ -18,7 +18,7 @@
                         </div>
                     </el-col>
                     <el-col :span="14">
-                        <teacher-tab></teacher-tab>
+                        <teacher-tab :homework="{{$homework}}"></teacher-tab>
                     </el-col>
                 </el-row>
 

@@ -43,6 +43,7 @@
 
 <script>
 export default {
+  props: ['homework'],
   data() {
     return {
        activeName: 'first',
@@ -120,7 +121,13 @@ export default {
       }
     },
   mounted() {
-    console.log("Component mounted.");
+    console.log(this.homework);
+    if (!!!this.homework[0]){
+      this.tableData[0].name = "Домашнего задания нет";
+    
+    } else {
+      this.tableData[0].name = this.homework[0].answer;
+    }
   }
 };
 </script>

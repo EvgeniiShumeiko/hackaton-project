@@ -3978,6 +3978,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['homework'],
   data: function data() {
     return {
       activeName: 'first',
@@ -4055,7 +4056,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    console.log(this.homework);
+
+    if (!!!this.homework[0]) {
+      this.tableData[0].name = "Домашнего задания нет";
+    } else {
+      this.tableData[0].name = this.homework[0].answer;
+    }
   }
 });
 
