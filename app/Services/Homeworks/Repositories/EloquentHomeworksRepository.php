@@ -32,4 +32,9 @@ class EloquentHomeworksRepository implements HomeworksRepositoryInterface
     {
         return Homework::all();
     }
+
+    public function getHomeworkByIdWithReplies(int $homework_id): ?Homework
+    {
+        return Homework::whereId($homework_id)->with('replies')->first();
+    }
 }

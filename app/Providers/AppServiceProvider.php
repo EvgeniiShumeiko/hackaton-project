@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\Homeworks\HomeworkReplies\Repositories\EloquentHomeworkRepliesRepository;
+use App\Services\Homeworks\HomeworkReplies\Repositories\HomeworkRepliesRepositoryInterface;
 use App\Services\Homeworks\Repositories\EloquentHomeworksRepository;
 use App\Services\Homeworks\Repositories\HomeworksRepositoryInterface;
 use App\Services\Lessons\Repositories\EloquentLessonsRepository;
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(LessonsRepositoryInterface::class, EloquentLessonsRepository::class);
         $this->app->bind(UserRepositoryInterface::class, EloquentUserRepository::class);
         $this->app->bind(HomeworksRepositoryInterface::class, EloquentHomeworksRepository::class);
+        $this->app->bind(HomeworkRepliesRepositoryInterface::class, EloquentHomeworkRepliesRepository::class);
     }
 
     /**

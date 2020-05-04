@@ -34,6 +34,16 @@ class HomeworksService
        return $this->homeworkRepository->createFromArray($data);
     }
 
+    public function updateFromArray(Homework $homework, array $data)
+    {
+        return $this->homeworkRepository->updateFromArray($homework, $data);
+    }
+
+    public function getHomeworkByIdWithReplies(int $homework_id)
+    {
+        return $this->homeworkRepository->getHomeworkByIdWithReplies($homework_id);
+    }
+
     public function getAll()
     {
         return $this->homeworkRepository->getAll();

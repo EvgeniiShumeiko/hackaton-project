@@ -18,4 +18,6 @@ interface HomeworksRepositoryInterface
     public function createFromArray(array $data): Homework;
 
     public function updateFromArray(Homework $homework, array $data): Homework;
+
+    public function getHomeworkByIdWithReplies(int $homework_id): ?Homework;
 }
