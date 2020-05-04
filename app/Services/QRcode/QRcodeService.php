@@ -11,6 +11,6 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class QRcodeService
 {
     public function generateByUrl(string $url){
-        return QrCode::generate($url);
+        return QrCode::size(200)->color(69, 128, 194)->generate($url);
     }
 }
