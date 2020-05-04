@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
+@section('header')
+
+@endsection
+
 @section('content')
+
+
+
+
+
+
+
+
 <el-container>
     <el-main>
         <el-row :gutter="20" type="flex" justify="center">
@@ -8,9 +20,15 @@
                 <el-row :gutter="20">
                     <el-col>
                         <div class="grid-content bg-purple">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wo1OhuEL5kQ" allowfullscreen></iframe>
+                            <div class="embed-responsive embed-responsive-16by9 video-item">
+                            <video id="video" height="120" width="160" autoplay></video>
+                                <br>
+                                <button onclick="call()">Call!</button><br>
+                                <div id="div"></div>
+                            <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wo1OhuEL5kQ" allowfullscreen></iframe> -->
+
                             </div>
+                            <div id="errorMsg"></div>
                         </div>
                     </el-col>
                 </el-row>
@@ -190,4 +208,33 @@
         </el-row>
     </el-main>
 </el-container>
+@endsection
+
+@section('footer')
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="https://rawgit.com/jan-ivar/localSocket/master/localSocket.js"></script>
+
+<script>
+
+var pc = new RTCPeerConnection();
+var call = e => navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(stream => pc.addStream(video.srcObject = stream)).catch(log);
+
+pc.onaddstream = e => video.srcObject = e.stream;
+pc.oniceconnectionstatechange = e => log(pc.iceConnectionState);
+pc.onicecandidate = e => sc.send({ice: e.candidate});
+pc.onnegotiationneeded = e => pc.createOffer()
+  .then(sdp => pc.setLocalDescription(sdp).then(() => sc.send({sdp}))).catch(log);
+
+var sc = new localSocket();
+sc.onmessage = ({data: {sdp, ice}}) => sdp && pc.setRemoteDescription(sdp)
+  .then(() => pc.signalingState == "stable" || pc.createAnswer()
+    .then(sdp => pc.setLocalDescription(sdp).then(() => sc.send({sdp}))))
+  .catch(log) || ice && pc.addIceCandidate(ice).catch(log);
+
+var log = msg => div.innerHTML += "<br>" + msg;
+
+    call();
+    </script>
 @endsection

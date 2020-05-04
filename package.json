@@ -27,6 +27,7 @@
         "basic-vue-chat": "^0.3.5",
         "bootstrap": "^4.4.1",
         "element-ui": "^2.13.1",
-        "vue-moment": "^4.1.0"
+        "vue-moment": "^4.1.0",
+        "vue-webrtc": "^1.2.0"
     }
 }

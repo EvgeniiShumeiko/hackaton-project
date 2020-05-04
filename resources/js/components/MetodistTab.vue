@@ -1,9 +1,9 @@
 <template>
   <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="Материалы уроков" name="first">
+        <el-tab-pane label="Отчет об успеваемости<" name="first">
             <div class="block">
               <el-date-picker
-                  v-model="value1"
+                  v-model="value3"
                   type="date"
                   placeholder="Выберите дату">
                 </el-date-picker>
@@ -25,11 +25,8 @@
               </el-select>
             </div>
             <div class="mt-3">
-              <el-input class="mt-2" placeholder="Введите материал"></el-input>
-              <el-input class="mt-2" placeholder="Введите материал"></el-input>
-              <el-input class="mt-2" placeholder="Введите материал"></el-input>
-              <el-input class="mt-2" placeholder="Введите материал"></el-input>
-              <el-button type="primary" class="mt-2" plain>Добавить материал</el-button>
+              <el-input class="mt-2" placeholder="Введите материал" v-model="value2"></el-input>
+              <el-button type="primary" class="mt-2" plain>Jnxtn</el-button>
             </div>
             
     </el-tab-pane>
@@ -105,6 +102,7 @@ export default {
         value: 'Option1',
         value1: 'Option1',
         value2: '',
+        value3: '',
     };
   },
   methods: {

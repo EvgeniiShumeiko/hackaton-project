@@ -13,17 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('lesson', 'LessonController@index');
+Route::get('admin', function () {
+    return view('admin');
+});
 
-Route::get('cabinet', 'CabinetController@index');
+Route::get('lesson', 'LessonController@index')->middleware('auth');
 
-Route::get('teacher', 'TeacherController@index');
+Route::get('cabinet', 'CabinetController@index')->middleware('auth');
 
-Route::get('metodist', 'MetodistController@index');
+Route::get('teacher', 'TeacherController@index')->middleware('auth');
+
+Route::get('metodist', 'MetodistController@index')->middleware('auth');
 
 Auth::routes();
 
