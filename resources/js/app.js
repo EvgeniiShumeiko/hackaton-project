@@ -6,7 +6,8 @@
 
 require('./bootstrap');
 import Element from 'element-ui';
-import locale from 'element-ui/lib/locale/lang/ru-RU'
+import locale from 'element-ui/lib/locale/lang/ru-RU';
+
 
 window.Vue = require('vue');
 window.Vue.use(Element, { locale });

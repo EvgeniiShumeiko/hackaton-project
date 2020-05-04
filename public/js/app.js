@@ -3834,9 +3834,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3901,7 +3898,8 @@ __webpack_require__.r(__webpack_exports__);
       },
       value: 'Option1',
       value1: 'Option1',
-      value2: ''
+      value2: '',
+      value3: ''
     };
   },
   methods: {
@@ -100434,7 +100432,7 @@ var render = function() {
     [
       _c(
         "el-tab-pane",
-        { attrs: { label: "Материалы уроков", name: "first" } },
+        { attrs: { label: "Отчет об успеваемости<", name: "first" } },
         [
           _c(
             "div",
@@ -100443,11 +100441,11 @@ var render = function() {
               _c("el-date-picker", {
                 attrs: { type: "date", placeholder: "Выберите дату" },
                 model: {
-                  value: _vm.value1,
+                  value: _vm.value3,
                   callback: function($$v) {
-                    _vm.value1 = $$v
+                    _vm.value3 = $$v
                   },
-                  expression: "value1"
+                  expression: "value3"
                 }
               }),
               _vm._v(" "),
@@ -100502,28 +100500,20 @@ var render = function() {
             [
               _c("el-input", {
                 staticClass: "mt-2",
-                attrs: { placeholder: "Введите материал" }
-              }),
-              _vm._v(" "),
-              _c("el-input", {
-                staticClass: "mt-2",
-                attrs: { placeholder: "Введите материал" }
-              }),
-              _vm._v(" "),
-              _c("el-input", {
-                staticClass: "mt-2",
-                attrs: { placeholder: "Введите материал" }
-              }),
-              _vm._v(" "),
-              _c("el-input", {
-                staticClass: "mt-2",
-                attrs: { placeholder: "Введите материал" }
+                attrs: { placeholder: "Введите материал" },
+                model: {
+                  value: _vm.value2,
+                  callback: function($$v) {
+                    _vm.value2 = $$v
+                  },
+                  expression: "value2"
+                }
               }),
               _vm._v(" "),
               _c(
                 "el-button",
                 { staticClass: "mt-2", attrs: { type: "primary", plain: "" } },
-                [_vm._v("Добавить материал")]
+                [_vm._v("Jnxtn")]
               )
             ],
             1
