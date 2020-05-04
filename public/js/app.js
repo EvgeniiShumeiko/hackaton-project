@@ -3561,10 +3561,134 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      fileList: [],
+      activeNames: ['1'],
+      pickerOptions: {
+        disabledDate: function disabledDate(time) {
+          return time.getTime() > Date.now();
+        },
+        shortcuts: [{
+          text: 'Today',
+          onClick: function onClick(picker) {
+            picker.$emit('pick', new Date());
+          }
+        }, {
+          text: 'Yesterday',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24);
+            picker.$emit('pick', date);
+          }
+        }, {
+          text: 'A week ago',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+            picker.$emit('pick', date);
+          }
+        }]
+      },
+      value1: '',
+      value2: ''
     };
   },
   methods: {
@@ -3655,6 +3779,283 @@ __webpack_require__.r(__webpack_exports__);
         work: "Посмотреть работу"
       }]
     };
+  },
+  mounted: function mounted() {
+    console.log("Component mounted.");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MetodistTab.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MetodistTab.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activeName: 'first',
+      fileList: [],
+      activeNames: ['1'],
+      tableData: [{
+        date: 'Никитин Алексей',
+        name: 'Открыть задание',
+        coin: '4'
+      }, {
+        date: 'Шумейко Евгений',
+        name: 'Открыть задание',
+        coin: '5'
+      }, {
+        date: 'Богданов Егор',
+        name: 'Открыть задание',
+        coin: 'выставить'
+      }, {
+        date: 'Обухов Иван',
+        name: 'Открыть задание',
+        coin: '5'
+      }],
+      options: [{
+        value: 'Option1',
+        label: '8'
+      }, {
+        value: 'Option2',
+        label: '9'
+      }],
+      predmet: [{
+        value: 'Option1',
+        label: 'Математика'
+      }, {
+        value: 'Option2',
+        label: 'Русский язык'
+      }],
+      pickerOptions: {
+        disabledDate: function disabledDate(time) {
+          return time.getTime() > Date.now();
+        },
+        shortcuts: [{
+          text: 'Today',
+          onClick: function onClick(picker) {
+            picker.$emit('pick', new Date());
+          }
+        }, {
+          text: 'Yesterday',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24);
+            picker.$emit('pick', date);
+          }
+        }, {
+          text: 'A week ago',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+            picker.$emit('pick', date);
+          }
+        }]
+      },
+      value: 'Option1',
+      value1: 'Option1',
+      value2: ''
+    };
+  },
+  methods: {
+    handleClick: function handleClick(tab, event) {
+      console.log(tab, event);
+    },
+    handleRemove: function handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview: function handlePreview(file) {
+      console.log(file);
+    },
+    handleExceed: function handleExceed(files, fileList) {
+      this.$message.warning("The limit is 3, you selected ".concat(files.length, " files this time, add up to ").concat(files.length + fileList.length, " totally"));
+    },
+    beforeRemove: function beforeRemove(file, fileList) {
+      return this.$confirm("Cancel the transfert of ".concat(file.name, " ?"));
+    }
+  },
+  mounted: function mounted() {
+    console.log("Component mounted.");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TeacherTab.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TeacherTab.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activeName: 'first',
+      fileList: [],
+      activeNames: ['1'],
+      tableData: [{
+        date: 'Никитин Алексей',
+        name: 'Открыть задание',
+        coin: '4'
+      }, {
+        date: 'Шумейко Евгений',
+        name: 'Открыть задание',
+        coin: '5'
+      }, {
+        date: 'Богданов Егор',
+        name: 'Открыть задание',
+        coin: 'выставить'
+      }, {
+        date: 'Обухов Иван',
+        name: 'Открыть задание',
+        coin: '5'
+      }],
+      options: [{
+        value: 'Option1',
+        label: '8 А'
+      }, {
+        value: 'Option2',
+        label: '9 Б'
+      }],
+      pickerOptions: {
+        disabledDate: function disabledDate(time) {
+          return time.getTime() > Date.now();
+        },
+        shortcuts: [{
+          text: 'Today',
+          onClick: function onClick(picker) {
+            picker.$emit('pick', new Date());
+          }
+        }, {
+          text: 'Yesterday',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24);
+            picker.$emit('pick', date);
+          }
+        }, {
+          text: 'A week ago',
+          onClick: function onClick(picker) {
+            var date = new Date();
+            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+            picker.$emit('pick', date);
+          }
+        }]
+      },
+      value: 'Option1',
+      value1: '',
+      value2: ''
+    };
+  },
+  methods: {
+    handleClick: function handleClick(tab, event) {
+      console.log(tab, event);
+    },
+    handleRemove: function handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview: function handlePreview(file) {
+      console.log(file);
+    },
+    handleExceed: function handleExceed(files, fileList) {
+      this.$message.warning("The limit is 3, you selected ".concat(files.length, " files this time, add up to ").concat(files.length + fileList.length, " totally"));
+    },
+    beforeRemove: function beforeRemove(file, fileList) {
+      return this.$confirm("Cancel the transfert of ".concat(file.name, " ?"));
+    }
   },
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -56684,6 +57085,140 @@ exports.default = { use: use, t: t, i18n: i18n };
 
 /***/ }),
 
+/***/ "./node_modules/element-ui/lib/locale/lang/ru-RU.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/element-ui/lib/locale/lang/ru-RU.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.default = {
+  el: {
+    colorpicker: {
+      confirm: 'OK',
+      clear: 'Очистить'
+    },
+    datepicker: {
+      now: 'Сейчас',
+      today: 'Сегодня',
+      cancel: 'Отмена',
+      clear: 'Очистить',
+      confirm: 'OK',
+      selectDate: 'Выбрать дату',
+      selectTime: 'Выбрать время',
+      startDate: 'Дата начала',
+      startTime: 'Время начала',
+      endDate: 'Дата окончания',
+      endTime: 'Время окончания',
+      prevYear: 'Предыдущий год',
+      nextYear: 'Следующий год',
+      prevMonth: 'Предыдущий месяц',
+      nextMonth: 'Следующий месяц',
+      year: '',
+      month1: 'Январь',
+      month2: 'Февраль',
+      month3: 'Март',
+      month4: 'Апрель',
+      month5: 'Май',
+      month6: 'Июнь',
+      month7: 'Июль',
+      month8: 'Август',
+      month9: 'Сентябрь',
+      month10: 'Октябрь',
+      month11: 'Ноябрь',
+      month12: 'Декабрь',
+      week: 'неделя',
+      weeks: {
+        sun: 'Вс',
+        mon: 'Пн',
+        tue: 'Вт',
+        wed: 'Ср',
+        thu: 'Чт',
+        fri: 'Пт',
+        sat: 'Сб'
+      },
+      months: {
+        jan: 'Янв',
+        feb: 'Фев',
+        mar: 'Мар',
+        apr: 'Апр',
+        may: 'Май',
+        jun: 'Июн',
+        jul: 'Июл',
+        aug: 'Авг',
+        sep: 'Сен',
+        oct: 'Окт',
+        nov: 'Ноя',
+        dec: 'Дек'
+      }
+    },
+    select: {
+      loading: 'Загрузка',
+      noMatch: 'Совпадений не найдено',
+      noData: 'Нет данных',
+      placeholder: 'Выбрать'
+    },
+    cascader: {
+      noMatch: 'Совпадений не найдено',
+      loading: 'Загрузка',
+      placeholder: 'Выбрать',
+      noData: 'Нет данных'
+    },
+    pagination: {
+      goto: 'Перейти',
+      pagesize: ' на странице',
+      total: 'Всего {total}',
+      pageClassifier: ''
+    },
+    messagebox: {
+      title: 'Сообщение',
+      confirm: 'OK',
+      cancel: 'Отмена',
+      error: 'Недопустимый ввод данных'
+    },
+    upload: {
+      deleteTip: 'Нажмите [Удалить] для удаления',
+      delete: 'Удалить',
+      preview: 'Превью',
+      continue: 'Продолжить'
+    },
+    table: {
+      emptyText: 'Нет данных',
+      confirmFilter: 'Подтвердить',
+      resetFilter: 'Сбросить',
+      clearFilter: 'Все',
+      sumText: 'Сумма'
+    },
+    tree: {
+      emptyText: 'Нет данных'
+    },
+    transfer: {
+      noMatch: 'Совпадений не найдено',
+      noData: 'Нет данных',
+      titles: ['Список 1', 'Список 2'],
+      filterPlaceholder: 'Введите ключевое слово',
+      noCheckedFormat: '{total} пунктов',
+      hasCheckedFormat: '{checked}/{total} выбрано'
+    },
+    image: {
+      error: 'FAILED' // to be translated
+    },
+    pageHeader: {
+      title: 'Back' // to be translated
+    },
+    popconfirm: {
+      confirmButtonText: 'Yes', // to be translated
+      cancelButtonText: 'No' // to be translated
+    }
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/element-ui/lib/locale/lang/zh-CN.js":
 /*!**********************************************************!*\
   !*** ./node_modules/element-ui/lib/locale/lang/zh-CN.js ***!
@@ -99493,47 +100028,282 @@ var render = function() {
         { attrs: { label: "Домашнее задание", name: "first" } },
         [
           _c(
-            "el-upload",
-            {
-              staticClass: "upload-demo",
-              attrs: {
-                action: "https://jsonplaceholder.typicode.com/posts/",
-                "on-preview": _vm.handlePreview,
-                "on-remove": _vm.handleRemove,
-                "before-remove": _vm.beforeRemove,
-                multiple: "",
-                limit: 3,
-                "on-exceed": _vm.handleExceed,
-                "file-list": _vm.fileList
-              }
-            },
+            "div",
+            { staticClass: "block" },
             [
-              _c(
-                "el-button",
-                { attrs: { size: "small", type: "primary", plain: "" } },
-                [_vm._v("Загрузить изображение")]
-              ),
+              _c("span", { staticClass: "demonstration" }, [
+                _vm._v("Выберите дату")
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "el-upload__tip",
-                  attrs: { slot: "tip" },
-                  slot: "tip"
-                },
-                [_vm._v("jpg/png максимальный размер файлов 500Кб")]
-              )
+              _c("el-date-picker", {
+                attrs: { type: "date", placeholder: "Выберите дату" },
+                model: {
+                  value: _vm.value1,
+                  callback: function($$v) {
+                    _vm.value1 = $$v
+                  },
+                  expression: "value1"
+                }
+              })
             ],
             1
           ),
           _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary", plain: "" } }, [
-            _vm._v("Загрузить изображение")
-          ]),
-          _vm._v(" "),
-          _c("el-button", { attrs: { type: "primary", plain: "" } }, [
-            _vm._v("Сделать фото")
-          ])
+          _c(
+            "el-collapse",
+            {
+              staticClass: "mt-2",
+              model: {
+                value: _vm.activeNames,
+                callback: function($$v) {
+                  _vm.activeNames = $$v
+                },
+                expression: "activeNames"
+              }
+            },
+            [
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Математика", name: "1" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "p-3" },
+                    [
+                      _c("div", [
+                        _vm._v(
+                          "Страница 50, упражнение 9, выучить формулы 5, 6"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "el-upload",
+                        {
+                          staticClass: "upload-demo",
+                          attrs: {
+                            action:
+                              "https://jsonplaceholder.typicode.com/posts/",
+                            "on-preview": _vm.handlePreview,
+                            "on-remove": _vm.handleRemove,
+                            "before-remove": _vm.beforeRemove,
+                            multiple: "",
+                            limit: 3,
+                            "on-exceed": _vm.handleExceed,
+                            "file-list": _vm.fileList
+                          }
+                        },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Уникальный QR-код для этого задания")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-image", {
+                            staticStyle: { width: "150px" },
+                            attrs: { src: "/img/qr88578761.png", fit: "fit" }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Загрузить изображение")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Сделать фото")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Русский язык", name: "2" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "p-3" },
+                    [
+                      _c("div", [
+                        _vm._v(
+                          "Страница 50, упражнение 9, выучить формулы 5, 6"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "el-upload",
+                        {
+                          staticClass: "upload-demo",
+                          attrs: {
+                            action:
+                              "https://jsonplaceholder.typicode.com/posts/",
+                            "on-preview": _vm.handlePreview,
+                            "on-remove": _vm.handleRemove,
+                            "before-remove": _vm.beforeRemove,
+                            multiple: "",
+                            limit: 3,
+                            "on-exceed": _vm.handleExceed,
+                            "file-list": _vm.fileList
+                          }
+                        },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Уникальный QR-код для этого задания")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-image", {
+                            staticStyle: { width: "150px" },
+                            attrs: { src: "/img/qr88578761.png", fit: "fit" }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Загрузить изображение")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Сделать фото")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "История", name: "3" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "p-3" },
+                    [
+                      _c("div", [
+                        _vm._v(
+                          "Страница 50, упражнение 9, выучить формулы 5, 6"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "el-upload",
+                        {
+                          staticClass: "upload-demo",
+                          attrs: {
+                            action:
+                              "https://jsonplaceholder.typicode.com/posts/",
+                            "on-preview": _vm.handlePreview,
+                            "on-remove": _vm.handleRemove,
+                            "before-remove": _vm.beforeRemove,
+                            multiple: "",
+                            limit: 3,
+                            "on-exceed": _vm.handleExceed,
+                            "file-list": _vm.fileList
+                          }
+                        },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Уникальный QR-код для этого задания")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-image", {
+                            staticStyle: { width: "150px" },
+                            attrs: { src: "/img/qr88578761.png", fit: "fit" }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Загрузить изображение")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Сделать фото")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-collapse-item",
+                { attrs: { title: "Обществознание", name: "4" } },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "p-3" },
+                    [
+                      _c("div", [
+                        _vm._v(
+                          "Страница 50, упражнение 9, выучить формулы 5, 6"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "el-upload",
+                        {
+                          staticClass: "upload-demo",
+                          attrs: {
+                            action:
+                              "https://jsonplaceholder.typicode.com/posts/",
+                            "on-preview": _vm.handlePreview,
+                            "on-remove": _vm.handleRemove,
+                            "before-remove": _vm.beforeRemove,
+                            multiple: "",
+                            limit: 3,
+                            "on-exceed": _vm.handleExceed,
+                            "file-list": _vm.fileList
+                          }
+                        },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Уникальный QR-код для этого задания")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-image", {
+                            staticStyle: { width: "150px" },
+                            attrs: { src: "/img/qr88578761.png", fit: "fit" }
+                          }),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Загрузить изображение")
+                          ]),
+                          _vm._v(" "),
+                          _c("el-link", { attrs: { type: "primary" } }, [
+                            _vm._v("Сделать фото")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ],
         1
       ),
@@ -99623,6 +100393,272 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("el-table-column", { attrs: { prop: "work", label: "Работа" } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "el-tabs",
+    {
+      on: { "tab-click": _vm.handleClick },
+      model: {
+        value: _vm.activeName,
+        callback: function($$v) {
+          _vm.activeName = $$v
+        },
+        expression: "activeName"
+      }
+    },
+    [
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Материалы уроков", name: "first" } },
+        [
+          _c(
+            "div",
+            { staticClass: "block" },
+            [
+              _c("el-date-picker", {
+                attrs: { type: "date", placeholder: "Выберите дату" },
+                model: {
+                  value: _vm.value1,
+                  callback: function($$v) {
+                    _vm.value1 = $$v
+                  },
+                  expression: "value1"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "el-select",
+                {
+                  attrs: { placeholder: "Выберите предмет" },
+                  model: {
+                    value: _vm.value1,
+                    callback: function($$v) {
+                      _vm.value1 = $$v
+                    },
+                    expression: "value1"
+                  }
+                },
+                _vm._l(_vm.predmet, function(item) {
+                  return _c("el-option", {
+                    key: item.value,
+                    attrs: { label: item.label, value: item.value }
+                  })
+                }),
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-select",
+                {
+                  attrs: { placeholder: "Выберите параллель" },
+                  model: {
+                    value: _vm.value,
+                    callback: function($$v) {
+                      _vm.value = $$v
+                    },
+                    expression: "value"
+                  }
+                },
+                _vm._l(_vm.options, function(item) {
+                  return _c("el-option", {
+                    key: item.value,
+                    attrs: { label: item.label, value: item.value }
+                  })
+                }),
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mt-3" },
+            [
+              _c("el-input", {
+                staticClass: "mt-2",
+                attrs: { placeholder: "Введите материал" }
+              }),
+              _vm._v(" "),
+              _c("el-input", {
+                staticClass: "mt-2",
+                attrs: { placeholder: "Введите материал" }
+              }),
+              _vm._v(" "),
+              _c("el-input", {
+                staticClass: "mt-2",
+                attrs: { placeholder: "Введите материал" }
+              }),
+              _vm._v(" "),
+              _c("el-input", {
+                staticClass: "mt-2",
+                attrs: { placeholder: "Введите материал" }
+              }),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                { staticClass: "mt-2", attrs: { type: "primary", plain: "" } },
+                [_vm._v("Добавить материал")]
+              )
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Работа с расписанием", name: "fourth" } },
+        [_vm._v("Role")]
+      ),
+      _vm._v(" "),
+      _c("el-tab-pane", { attrs: { label: "Личные данные", name: "second" } }, [
+        _vm._v("ывыва")
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Электронные учебники", name: "third" } },
+        [_vm._v("Role")]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "el-tabs",
+    {
+      on: { "tab-click": _vm.handleClick },
+      model: {
+        value: _vm.activeName,
+        callback: function($$v) {
+          _vm.activeName = $$v
+        },
+        expression: "activeName"
+      }
+    },
+    [
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Домашнее задание", name: "first" } },
+        [
+          _c(
+            "div",
+            { staticClass: "block" },
+            [
+              _c("el-date-picker", {
+                attrs: { type: "date", placeholder: "Выберите дату" },
+                model: {
+                  value: _vm.value1,
+                  callback: function($$v) {
+                    _vm.value1 = $$v
+                  },
+                  expression: "value1"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "el-select",
+                {
+                  attrs: { placeholder: "Выберите класс" },
+                  model: {
+                    value: _vm.value,
+                    callback: function($$v) {
+                      _vm.value = $$v
+                    },
+                    expression: "value"
+                  }
+                },
+                _vm._l(_vm.options, function(item) {
+                  return _c("el-option", {
+                    key: item.value,
+                    attrs: { label: item.label, value: item.value }
+                  })
+                }),
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "el-table",
+            { staticStyle: { width: "100%" }, attrs: { data: _vm.tableData } },
+            [
+              _c("el-table-column", {
+                attrs: { prop: "date", label: "Ученик", width: "180" }
+              }),
+              _vm._v(" "),
+              _c("el-table-column", {
+                attrs: { prop: "name", label: "Задание", width: "180" }
+              }),
+              _vm._v(" "),
+              _c("el-table-column", {
+                attrs: { prop: "coin", label: "Оценка", width: "90" }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("el-tab-pane", { attrs: { label: "Личные данные", name: "second" } }, [
+        _vm._v("Config")
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-tab-pane",
+        { attrs: { label: "Электронные учебники", name: "third" } },
+        [_vm._v("Role")]
+      )
     ],
     1
   )
@@ -111807,6 +112843,8 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! element-ui */ "./node_modules/element-ui/lib/element-ui.common.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! element-ui/lib/locale/lang/ru-RU */ "./node_modules/element-ui/lib/locale/lang/ru-RU.js");
+/* harmony import */ var element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -111815,8 +112853,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.Vue.use(element_ui__WEBPACK_IMPORTED_MODULE_0___default.a);
+window.Vue.use(element_ui__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  locale: element_ui_lib_locale_lang_ru_RU__WEBPACK_IMPORTED_MODULE_1___default.a
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -111830,6 +112871,8 @@ window.Vue.use(element_ui__WEBPACK_IMPORTED_MODULE_0___default.a);
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('home-work', __webpack_require__(/*! ./components/HomeWork.vue */ "./resources/js/components/HomeWork.vue")["default"]);
 Vue.component('cabinet-tab', __webpack_require__(/*! ./components/CabinetTab.vue */ "./resources/js/components/CabinetTab.vue")["default"]);
+Vue.component('teacher-tab', __webpack_require__(/*! ./components/TeacherTab.vue */ "./resources/js/components/TeacherTab.vue")["default"]);
+Vue.component('metodist-tab', __webpack_require__(/*! ./components/MetodistTab.vue */ "./resources/js/components/MetodistTab.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -112089,6 +113132,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeWork_vue_vue_type_template_id_51b6f5fb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeWork_vue_vue_type_template_id_51b6f5fb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/MetodistTab.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/MetodistTab.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MetodistTab.vue?vue&type=template&id=7c7148fe& */ "./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe&");
+/* harmony import */ var _MetodistTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MetodistTab.vue?vue&type=script&lang=js& */ "./resources/js/components/MetodistTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MetodistTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/MetodistTab.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/MetodistTab.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/MetodistTab.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MetodistTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./MetodistTab.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MetodistTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MetodistTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MetodistTab.vue?vue&type=template&id=7c7148fe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MetodistTab.vue?vue&type=template&id=7c7148fe&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MetodistTab_vue_vue_type_template_id_7c7148fe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TeacherTab.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/TeacherTab.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TeacherTab.vue?vue&type=template&id=fb64b904& */ "./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904&");
+/* harmony import */ var _TeacherTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TeacherTab.vue?vue&type=script&lang=js& */ "./resources/js/components/TeacherTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TeacherTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TeacherTab.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TeacherTab.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/TeacherTab.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TeacherTab.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TeacherTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TeacherTab.vue?vue&type=template&id=fb64b904& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TeacherTab.vue?vue&type=template&id=fb64b904&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherTab_vue_vue_type_template_id_fb64b904___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

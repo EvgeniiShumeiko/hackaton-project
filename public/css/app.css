@@ -1,10 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);body {
-    background-color: #74EBD5;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
-    min-height: 100vh;
-}
-
-::-webkit-scrollbar {
+@import url(https://fonts.googleapis.com/css?family=Nunito);::-webkit-scrollbar {
     width: 5px;
 }
 

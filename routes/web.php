@@ -21,6 +21,10 @@ Route::get('lesson', 'LessonController@index');
 
 Route::get('cabinet', 'CabinetController@index');
 
+Route::get('teacher', 'TeacherController@index');
+
+Route::get('metodist', 'MetodistController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

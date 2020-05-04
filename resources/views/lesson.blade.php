@@ -3,7 +3,7 @@
 @section('content')
 <el-container>
     <el-main>
-        <el-row :gutter="20">
+        <el-row :gutter="20" type="flex" justify="center">
             <el-col :span="15">
                 <el-row :gutter="20">
                     <el-col>
@@ -101,9 +101,9 @@
                     </el-col>
                 </el-row>
             </el-col>
-            <el-col :span="8" :offset="1">
-                <el-row :gutter="20">
-                    <el-col :span="20">
+            <el-col :span="8" >
+                <el-row>
+                    <el-col>
                         <div class="grid-content bg-purple">
                             <el-card class="box-card">
                                 <div slot="header" class="clearfix">
@@ -125,8 +125,22 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20">
-                    <el-col :span="20">
+                <el-row>
+                    <el-col>
+                        <div class="grid-content bg-purple">
+                            <el-card class="box-card">
+                                <div slot="header" class="clearfix">
+                                    <span>Действия</span>
+                                </div>
+                                <div style="height: 150px;">
+                                    <p>Поднять руку</p>
+                                </div>
+                            </el-card>
+                        </div>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col>
                         <div class="grid-content bg-purple">
                             <el-card class="box-card">
                                 <div slot="header" class="clearfix">
@@ -156,8 +170,8 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row :gutter="20">
-                    <el-col :span="20">
+                <el-row>
+                    <el-col>
                         <div class="grid-content bg-purple">
                             <div class="grid-content bg-purple">
                                 <el-card class="box-card">
