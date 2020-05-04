@@ -19,12 +19,23 @@
                        
                     </el-col>
                     <el-col :span="14">
-                        <cabinet-tab></cabinet-tab>
+                        <cabinet-tab :home="{{$homeworks}}"  qrcode="{{$qrCode}}"></cabinet-tab>
                     </el-col>
                 </el-row>
 
             </el-col>
             <el-col :span="8" :offset="1">
+            <el-row justify="center" type="flex">
+                    <el-col>
+                        <div class="grid-content bg-purple">
+                            <el-card class="box-card">
+                                <div slot="header" class="clearfix">
+                                    <span>ДЗ на сегодня</span>
+                                </div>
+                            </el-card>
+                        </div>
+                    </el-col>
+                </el-row>
             <el-row justify="center" type="flex">
                     <el-col>
                         <div class="grid-content bg-purple">

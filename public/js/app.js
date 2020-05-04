@@ -3654,9 +3654,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['home', 'qrcode'],
   data: function data() {
     return {
       activeName: 'first',
@@ -100060,65 +100059,64 @@ var render = function() {
               }
             },
             [
-              _c(
-                "el-collapse-item",
-                { attrs: { title: "Математика", name: "1" } },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "p-3" },
-                    [
-                      _c("div", [
-                        _vm._v(
-                          "Страница 50, упражнение 9, выучить формулы 5, 6"
+              _vm._l(_vm.home, function(h) {
+                return _c(
+                  "el-collapse-item",
+                  { attrs: { title: "Математика", name: "1" } },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "p-3" },
+                      [
+                        _c("div", [_vm._v(_vm._s(h.title))]),
+                        _vm._v(" "),
+                        _c(
+                          "el-upload",
+                          {
+                            staticClass: "upload-demo",
+                            attrs: {
+                              action:
+                                "https://jsonplaceholder.typicode.com/posts/",
+                              "on-preview": _vm.handlePreview,
+                              "on-remove": _vm.handleRemove,
+                              "before-remove": _vm.beforeRemove,
+                              multiple: "",
+                              limit: 3,
+                              "on-exceed": _vm.handleExceed,
+                              "file-list": _vm.fileList
+                            }
+                          },
+                          [
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("p", [_vm._v(_vm._s(h.description))]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("Уникальный QR-код для этого задания")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {
+                              domProps: { innerHTML: _vm._s(_vm.qrcode) }
+                            }),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("el-link", { attrs: { type: "primary" } }, [
+                              _vm._v("Загрузить изображение")
+                            ]),
+                            _vm._v(" "),
+                            _c("el-link", { attrs: { type: "primary" } }, [
+                              _vm._v("Сделать фото")
+                            ])
+                          ],
+                          1
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "el-upload",
-                        {
-                          staticClass: "upload-demo",
-                          attrs: {
-                            action:
-                              "https://jsonplaceholder.typicode.com/posts/",
-                            "on-preview": _vm.handlePreview,
-                            "on-remove": _vm.handleRemove,
-                            "before-remove": _vm.beforeRemove,
-                            multiple: "",
-                            limit: 3,
-                            "on-exceed": _vm.handleExceed,
-                            "file-list": _vm.fileList
-                          }
-                        },
-                        [
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v("Уникальный QR-код для этого задания")
-                          ]),
-                          _vm._v(" "),
-                          _c("el-image", {
-                            staticStyle: { width: "150px" },
-                            attrs: { src: "/img/qr88578761.png", fit: "fit" }
-                          }),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c("el-link", { attrs: { type: "primary" } }, [
-                            _vm._v("Загрузить изображение")
-                          ]),
-                          _vm._v(" "),
-                          _c("el-link", { attrs: { type: "primary" } }, [
-                            _vm._v("Сделать фото")
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ]
-              ),
+                      ],
+                      1
+                    )
+                  ]
+                )
+              }),
               _vm._v(" "),
               _c(
                 "el-collapse-item",
@@ -100300,7 +100298,7 @@ var render = function() {
                 ]
               )
             ],
-            1
+            2
           )
         ],
         1

@@ -10,9 +10,9 @@
         </el-date-picker>
       </div>
         <el-collapse v-model="activeNames" class="mt-2" >
-      <el-collapse-item title="Математика" name="1">
+      <el-collapse-item title="Математика" name="1" v-for="h in home">
         <div class="p-3">
-        <div>Страница 50, упражнение 9, выучить формулы 5, 6</div>
+        <div>{{h.title}}</div>
         <el-upload
             class="upload-demo"
             action="https://jsonplaceholder.typicode.com/posts/"
@@ -24,11 +24,9 @@
             :on-exceed="handleExceed"
             :file-list="fileList">
             <br>
+            <p>{{h.description}}</p>
             <p>Уникальный QR-код для этого задания</p>
-            <el-image
-              style="width: 150px;"
-              src="/img/qr88578761.png"
-              fit="fit"></el-image>
+            <div v-html="qrcode"></div>
               <br>
             <el-link type="primary">Загрузить изображение</el-link>
             <el-link type="primary">Сделать фото</el-link>
@@ -120,6 +118,7 @@
 
 <script>
 export default {
+  props: ['home','qrcode'],
   data() {
     return {
        activeName: 'first',
