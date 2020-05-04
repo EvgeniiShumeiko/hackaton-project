@@ -16,10 +16,12 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('subject_id')->unsigned();
+            $table->bigInteger('teacher_id')->unsigned()->nullable();
             $table->string('topic', 512);
             $table->timestamps();
 
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('users')->onDelete("set null");
         });
     }
 

@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('first_name');
             $table->string('last_name');
-            $table->enum('type', ['teacher', 'student']);
+            $table->enum('role', ['teacher', 'student', 'methodist'])->default('student');
             $table->string('password');
             $table->timestamps();
         });
