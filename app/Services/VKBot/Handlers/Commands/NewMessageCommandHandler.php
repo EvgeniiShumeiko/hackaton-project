@@ -38,51 +38,18 @@ class NewMessageCommandHandler
             case 'start':
                 $actionResponse->start();
                 break;
-            case 'faq':
-                $actionResponse->faqClick();
+
+            case 'upload':
+                $actionResponse->upload();
                 break;
-            case 'faq_buy':
-                $actionResponse->faqBuyClick();
+
+            case 'start_upload':
+                $actionResponse->startUpload();
                 break;
-            case 'faq_payment':
-                $actionResponse->faqPaymentClick();
+            case 'stop_upload':
+                $actionResponse->stopUpload();
                 break;
-            case 'faq_delivery':
-                $actionResponse->faqDeliveryClick();
-                break;
-            case 'faq_money_back':
-                $actionResponse->faqMoneyBackClick();
-                break;
-            case 'about':
-                $actionResponse->aboutClick();
-                break;
-            case 'about_shop':
-                $actionResponse->aboutShopClick();
-                break;
-            case 'about_workers':
-                $actionResponse->aboutWorkersClick();
-                break;
-            case 'stock':
-                $actionResponse->stockClick();
-                break;
-            case 'reviews':
-                $actionResponse->reviewsClick();
-                break;
-            case 'stock_1':
-                $actionResponse->stock1Click();
-                break;
-            case 'stock_2':
-                $actionResponse->stock2Click();
-                break;
-            case 'stock_3':
-                $actionResponse->stock3Click();
-                break;
-            case 'stock_4':
-                $actionResponse->stock4Click();
-                break;
-            case 'stock_4_bonus_code_entry':
-                $actionResponse->checkBonusCode();
-                break;
+
             default:
                 $actionResponse->defaultResponse();
         }
