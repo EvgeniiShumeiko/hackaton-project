@@ -32,6 +32,8 @@ public function __construct(HomeworksService $homeworkService, UsersService $use
         $isTeacher = $this->userService->isTeacher($user);
         $isMethodist = $this->userService->isMethodist($user);
 
-        return view('cabinet', compact('homeworks','qrCode','isStudent','isTeacher','isMethodist'));
+        $reply = $this->homeworkService->getHomeworkByIdWithReplies(1);
+
+        return view('cabinet', compact('homeworks','qrCode','isStudent','isTeacher','isMethodist','reply'));
     }
 }

@@ -33,6 +33,13 @@
                     @endif
                     @if($isTeacher)
                         <teacher-tab></teacher-tab>
+                        <br>
+                        <h1>Новые домашние задания</h1>
+                        @foreach($reply->replies as $key => $r)
+                        
+                               <p>{{$key+1}}.  {{$r->answer}}</p>
+                     
+                        @endforeach
                     @endif
                     @if($isMethodist)
                         <metodist-tab></metodist-tab>
