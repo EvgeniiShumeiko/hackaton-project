@@ -15,6 +15,7 @@
                   :value="item.value">
                 </el-option>
               </el-select>
+              <el-button type="primary" class="mt-2 mb-2" round>Добавить домашнее задание</el-button>
             </div>
            <el-table
               :data="tableData"
@@ -43,7 +44,7 @@
 
 <script>
 export default {
-  props: ['homework'],
+  props: [],
   data() {
     return {
        activeName: 'first',
@@ -122,12 +123,6 @@ export default {
     },
   mounted() {
     console.log(this.homework);
-    if (!!!this.homework[0]){
-      this.tableData[0].name = "Домашнего задания нет";
-    
-    } else {
-      this.tableData[0].name = this.homework[0].answer;
-    }
   }
 };
 </script>

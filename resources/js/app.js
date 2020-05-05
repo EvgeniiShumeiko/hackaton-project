@@ -7,10 +7,12 @@
 require('./bootstrap');
 import Element from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/ru-RU';
+import WebRTC from 'vue-webrtc';
 
 
 window.Vue = require('vue');
 window.Vue.use(Element, { locale });
+window.Vue.use(WebRTC);
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,6 +30,7 @@ Vue.component('home-work', require('./components/HomeWork.vue').default);
 Vue.component('cabinet-tab', require('./components/CabinetTab.vue').default);
 Vue.component('teacher-tab', require('./components/TeacherTab.vue').default);
 Vue.component('metodist-tab', require('./components/MetodistTab.vue').default);
+Vue.component('web-rtc', require('./components/Web.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

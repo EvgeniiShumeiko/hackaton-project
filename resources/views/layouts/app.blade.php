@@ -37,9 +37,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="/teacher">Кабинет учителя</a> </li>
-                            <li class="nav-item"><a class="nav-link" href="/cabinet">Кабинет ученика</a> </li>
-                            <li class="nav-item"><a class="nav-link" href="/metodist">Кабинет методиста</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="/cabinet">Мой кабинет</a> </li>
                             <li class="nav-item"><a class="nav-link" href="/lesson">Присоединиться к уроку</a> </li>
                         </ul>
 

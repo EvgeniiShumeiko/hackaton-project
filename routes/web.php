@@ -25,6 +25,11 @@ Route::get('admin', function () {
     return view('admin');
 });
 
+Route::get('web', function () {
+    return view('web');
+});
+
+
 Route::get('lesson', 'LessonController@index')->middleware('auth');
 
 Route::get('cabinet', 'CabinetController@index')->middleware('auth');
@@ -32,6 +37,10 @@ Route::get('cabinet', 'CabinetController@index')->middleware('auth');
 Route::get('teacher', 'TeacherController@index')->middleware('auth');
 
 Route::get('metodist', 'MetodistController@index')->middleware('auth');
+
+
+
+Route::get('homework/{subject}/{lesson}', 'HomeWorkController@index')->middleware('auth');
 
 Auth::routes();
 

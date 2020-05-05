@@ -9,107 +9,29 @@
           placeholder="Выберите дату">
         </el-date-picker>
       </div>
-        <el-collapse v-model="activeNames" class="mt-2" >
-      <el-collapse-item title="Математика" name="1" v-for="h in home">
-        <div class="p-3">
-        <div>{{h.title}}</div>
-        <el-upload
-            class="upload-demo"
-            action="https://jsonplaceholder.typicode.com/posts/"
-            :on-preview="handlePreview"
-            :on-remove="handleRemove"
-            :before-remove="beforeRemove"
-            multiple
-            :limit="3"
-            :on-exceed="handleExceed"
-            :file-list="fileList">
-            <br>
-            <p>{{h.description}}</p>
-            <p>Уникальный QR-код для этого задания</p>
-            <div v-html="qrcode"></div>
-              <br>
-            <el-link type="primary">Загрузить изображение</el-link>
-            <el-link type="primary">Сделать фото</el-link>
-            
-          </el-upload>
-          </div>
-      </el-collapse-item>
-      <el-collapse-item title="Русский язык" name="2">
-        <div class="p-3">
-        <div>Страница 50, упражнение 9, выучить формулы 5, 6</div>
-        <el-upload
-            class="upload-demo"
-            action="https://jsonplaceholder.typicode.com/posts/"
-            :on-preview="handlePreview"
-            :on-remove="handleRemove"
-            :before-remove="beforeRemove"
-            multiple
-            :limit="3"
-            :on-exceed="handleExceed"
-            :file-list="fileList">
-            <br>
-             <p>Уникальный QR-код для этого задания</p>
-            <el-image
-              style="width: 150px;"
-              src="/img/qr88578761.png"
-              fit="fit"></el-image>
-              <br>
-            <el-link type="primary">Загрузить изображение</el-link>
-            <el-link type="primary">Сделать фото</el-link>
-          </el-upload>
-          </div>
-      </el-collapse-item>
-      <el-collapse-item title="История" name="3">
-        <div class="p-3">
-        <div>Страница 50, упражнение 9, выучить формулы 5, 6</div>
-        <el-upload
-            class="upload-demo"
-            action="https://jsonplaceholder.typicode.com/posts/"
-            :on-preview="handlePreview"
-            :on-remove="handleRemove"
-            :before-remove="beforeRemove"
-            multiple
-            :limit="3"
-            :on-exceed="handleExceed"
-            :file-list="fileList">
-            <br>
-             <p>Уникальный QR-код для этого задания</p>
-            <el-image
-              style="width: 150px;"
-              src="/img/qr88578761.png"
-              fit="fit"></el-image>
-              <br>
-            <el-link type="primary">Загрузить изображение</el-link>
-            <el-link type="primary">Сделать фото</el-link>
-          </el-upload>
-          </div>
-      </el-collapse-item>
-      <el-collapse-item title="Обществознание" name="4">
-        <div class="p-3">
-          <div>Страница 50, упражнение 9, выучить формулы 5, 6</div>
-          <el-upload
-              class="upload-demo"
-              action="https://jsonplaceholder.typicode.com/posts/"
-              :on-preview="handlePreview"
-              :on-remove="handleRemove"
-              :before-remove="beforeRemove"
-              multiple
-              :limit="3"
-              :on-exceed="handleExceed"
-              :file-list="fileList">
-              <br>
-               <p>Уникальный QR-код для этого задания</p>
-            <el-image
-              style="width: 150px;"
-              src="/img/qr88578761.png"
-              fit="fit"></el-image>
-              <br>
-              <el-link type="primary">Загрузить изображение</el-link>
-              <el-link type="primary">Сделать фото</el-link>
-            </el-upload>
-          </div>
-      </el-collapse-item>
-    </el-collapse>
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Урок</th>
+            <th scope="col">Задание</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Физика</td>
+            <td><a href="/homework/2/1">Открыть задание</a>  </td>
+          </tr>
+          <tr>
+            <td>Математика</td>
+            <td><a href="/homework/2/1">Открыть задание</a>  </td>
+          </tr>
+          <tr>
+           <td>Русский язык</td>
+            <td><a href="/homework/2/1">Открыть задание</a>  </td>
+          </tr>
+        </tbody>
+      </table>
 </el-tab-pane>
     <el-tab-pane label="Личные данные" name="second">Config</el-tab-pane>
     <el-tab-pane label="Электронные учебники" name="third">Role</el-tab-pane>

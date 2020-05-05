@@ -7,38 +7,36 @@
 <script src="https://rawgit.com/jan-ivar/localSocket/master/localSocket.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        var pc = new RTCPeerConnection();
+    var pc = new RTCPeerConnection();
 
-        var call = e => navigator.mediaDevices.getUserMedia({
-                video: true,
-                audio: true
-            })
-            .then(stream => pc.addStream(video.srcObject = stream)).catch(log);
+    var call = e => navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true
+        })
+        .then(stream => pc.addStream(video.srcObject = stream)).catch(log);
 
-        pc.onaddstream = e => video.srcObject = e.stream;
-        pc.oniceconnectionstatechange = e => log(pc.iceConnectionState);
-        pc.onicecandidate = e => sc.send({
-            ice: e.candidate
-        });
-        pc.onnegotiationneeded = e => pc.createOffer()
+    pc.onaddstream = e => video.srcObject = e.stream;
+    pc.oniceconnectionstatechange = e => log(pc.iceConnectionState);
+    pc.onicecandidate = e => sc.send({
+        ice: e.candidate
+    });
+    pc.onnegotiationneeded = e => pc.createOffer()
+        .then(sdp => pc.setLocalDescription(sdp).then(() => sc.send({
+            sdp
+        }))).catch(log);
+
+    var sc = new localSocket();
+    sc.onmessage = ({
+            data: {
+                sdp,
+                ice
+            }
+        }) => sdp && pc.setRemoteDescription(sdp)
+        .then(() => pc.signalingState == "stable" || pc.createAnswer()
             .then(sdp => pc.setLocalDescription(sdp).then(() => sc.send({
                 sdp
-            }))).catch(log);
+            }))))
+        .catch(log) || ice && pc.addIceCandidate(ice).catch(log);
 
-        var sc = new localSocket();
-        sc.onmessage = ({
-                data: {
-                    sdp,
-                    ice
-                }
-            }) => sdp && pc.setRemoteDescription(sdp)
-            .then(() => pc.signalingState == "stable" || pc.createAnswer()
-                .then(sdp => pc.setLocalDescription(sdp).then(() => sc.send({
-                    sdp
-                }))))
-            .catch(log) || ice && pc.addIceCandidate(ice).catch(log);
-
-        var log = msg => div.innerHTML += "<br>" + msg;
-    });
+    var log = msg => div.innerHTML += "<br>" + msg;
 </script>

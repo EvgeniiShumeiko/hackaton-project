@@ -5,7 +5,16 @@
     <el-main>
         <el-row>
             <el-col class="bg-white shadow-sm p-3">
-                <h2>Кабинет ученика</h2>
+                    @if($isStudent)
+                    <h2>Кабинет ученика</h2>
+                    @endif
+                    @if($isTeacher)
+                    <h2>Кабинет учителя</h2>
+                    @endif
+                    @if($isMethodist)
+                    <h2>Кабинет методиста</h2>
+                    @endif
+                
             </el-col>
         </el-row>
         <el-row justify="center" type="flex">
@@ -19,7 +28,15 @@
                        
                     </el-col>
                     <el-col :span="14">
+                    @if($isStudent)
                         <cabinet-tab :home="{{$homeworks}}"  qrcode="{{$qrCode}}"></cabinet-tab>
+                    @endif
+                    @if($isTeacher)
+                        <teacher-tab></teacher-tab>
+                    @endif
+                    @if($isMethodist)
+                        <metodist-tab></metodist-tab>
+                    @endif
                     </el-col>
                 </el-row>
 
@@ -30,45 +47,11 @@
                         <div class="grid-content bg-purple">
                             <el-card class="box-card">
                                 <div slot="header" class="clearfix">
-                                    <span>ДЗ на сегодня</span>
+                                    <h4>Информация</h4>
+                                    
                                 </div>
-                            </el-card>
-                        </div>
-                    </el-col>
-                </el-row>
-            <el-row justify="center" type="flex">
-                    <el-col>
-                        <div class="grid-content bg-purple">
-                            <el-card class="box-card">
-                                <div slot="header" class="clearfix">
-                                    <span>Отправляй ДЗ откуда хочешь</span>
-                                </div>
-                                <div style="height: 300px;">
-                                <el-image
-                                style="width: 150px;"
-                                src="/img/qr88577499.png"
-                                fit="fit"></el-image>
-                                <el-image
-                                style="width: 150px;"
-                                src="/img/whatsapp-qr.png"
-                                fit="fit"></el-image>
-                                </div>
-                            
-                            </el-card>
-                        </div>
-                    </el-col>
-                </el-row>
-            <el-row justify="center" type="flex">
-                    <el-col >
-                        <div class="grid-content bg-purple">
-                            <el-card class="box-card">
-                                <div slot="header" class="clearfix">
-                                    <span>Текущий урок</span>
-                                </div>
-                                <div style="height: 100px;">
-                                    <p>Математика</p>
-                                    <el-button type="primary" plain>Присоединиться к уроку</el-button>
-                                </div>
+        
+                                <p><a href="lesson" class="btn btn-primary">Присоединиться к уроку</a></p>
                             </el-card>
                         </div>
                     </el-col>
@@ -93,7 +76,28 @@
                         </div>
                     </el-col>
                 </el-row>
-                
+                 <el-row justify="center" type="flex">
+                    <el-col>
+                        <div class="grid-content bg-purple">
+                            <el-card class="box-card">
+                                <div slot="header" class="clearfix">
+                                    <h4>Отправляй ДЗ откуда хочешь</h4>
+                                </div>
+                                <div style="height: 300px;">
+                                <el-image
+                                style="width: 150px;"
+                                src="/img/qr88577499.png"
+                                fit="fit"></el-image>
+                                <el-image
+                                style="width: 150px;"
+                                src="/img/whatsapp-qr.png"
+                                fit="fit"></el-image>
+                                </div>
+                            
+                            </el-card>
+                        </div>
+                    </el-col>
+                </el-row>
             </el-col>
         </el-row>
     </el-main>
